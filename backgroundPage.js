@@ -55,6 +55,15 @@ Pour la date maximum, on utilise la valeur retournée par la fonction getDateMax
 
  =================================================================================== */
 
+let myHeaders = new Headers();
+myHeaders.append("Authorization", "Basic YW50aG9ueUFQSTpyWmxadDFBV2o3NVg3ZW9tdkZrcQ==");
+
+let requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow'
+};
+
 function getOpenTicket() {
 
     getDateMax(); // On récupère la date actuelle
@@ -62,19 +71,11 @@ function getOpenTicket() {
     console.log("Date actuelle : " + getDateMax());
     console.log("Date de dernière requête : " + lastRequestDate);
 
-    let myHeaders = new Headers();
-    myHeaders.append("Authorization", "Basic YW50aG9ueUFQSTpyWmxadDFBV2o3NVg3ZW9tdkZrcQ==");
-
-    let requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-    };
-
     fetch("https://pcicustomers-api.simplydesk.fr/IncidentManagement.svc/GetOpenTickets?p=1&datemin=" + lastRequestDate + "&datemax=" + getDateMax(), requestOptions)
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => console.log('error', error));
+        .then(response => response.json())
+        .then(result => console.log(result.length)) // A essayer avec anthonytest pour voir si quand un nouveau ticket apparait il se passe quelquechose.
+        .catch(error => console.log('Impossible de contacter le serveur', error));
+
 
     getDateMin(); // On enrgistre la date à laquelle on a effectué la requête
 }
