@@ -1,0 +1,12 @@
+body {
+    background: aqua;
+}
+
+#alert {
+    display: flex;
+    flex-direction: row;
+}
+
+h1 {
+    font-size: xxx-large;
+}
