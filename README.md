@@ -1,4 +1,4 @@
-<h1> PCICustomersNotifications </h1>
+<h1> Simplydesk Notifications </h1>
 
 Cette extension chrome permet d'émettre une notification windows lors de la création d'un ticket sur un environnement Simplydesk.
 
