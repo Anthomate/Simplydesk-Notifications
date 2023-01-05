@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Options</title>
+    <link rel="stylesheet" href="ressources/style/reset.css">
+    <link rel="stylesheet" href="ressources/style/style.css">
+
+</head>
+<body>
+    <h1>Paramètres :</h1>
+    <ul>
+        <li>
+            <label for="APIUrl">Url API de votre environnement :</label>
+            <input type="url" id="APIUrl" required>
+        </li>
+        <li>
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username"required>
+        </li>
+        <li>
+            <label for="pass">Mot de passe :</label>
+            <input type="password" id="pass" name="pass" required>
+        </li>
+    </ul>
+
+    <div id="saveOptions">
+
+        <div id="status"></div>
+
+        <button id="save">Sauvegarder</button>
+
+    </div>
+
+    <script src="options.js"></script>
+
+</body>
+</html>

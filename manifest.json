@@ -1,18 +1,23 @@
 {
-  "name": "test",
+  "name": "Simplydesk Notifications",
   "description": "",
   "version": "1.0",
 
   "manifest_version": 3,
 
-  "action": {
-    "default_popup" : "./popup.html"
-  },
-
   "background": {
     "service_worker": "./backgroundPage.js"
   },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "ressources/img/icon.png",
+    "128": "ressources/img/icon.png"
+  },
 
-  "permissions": ["scripting","alarms", "notifications"],
+  "permissions": ["activeTab", "tabs","scripting","alarms", "notifications", "storage"],
   "host_permissions": ["*://*/*"]
 }
